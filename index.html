@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olim Portal - Aliyah Advisor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-modal" style="position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 2000;">
+        <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <h2 style="color: #1a73e8; margin-bottom: 10px;">Shalom!</h2>
+            <p>Enter your name to access your Aliyah portal:</p>
+            <input type="text" id="user-name-input" placeholder="Your Name" style="padding: 12px; margin: 20px 0; width: 250px; border: 1px solid #ddd; border-radius: 8px;">
+            <br>
+            <button id="start-btn" style="padding: 12px 30px; background: #1a73e8; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Enter Portal</button>
+        </div>
+    </div>
+
+    <div class="language-selector">
+        <button onclick="changeLang('en')">EN</button>
+        <button onclick="changeLang('es')">ES</button>
+        <button onclick="changeLang('he')">HE</button>
+        <button onclick="changeLang('ru')">RU</button>
+    </div>
+
+    <div class="main-layout">
+        <div class="content-area">
+            <header>
+                <h1 id="main-title">Aliyah Dashboard</h1>
+                <div id="progress-wrapper">
+                    <div id="progress-bar"></div>
+                </div>
+            </header>
+            
+            <div id="task-container"></div>
+
+            <div id="shopping-section">
+                <h3 style="margin-bottom: 15px; color: #2d3748;">Shopping List</h3>
+                <div class="shop-input-group">
+                    <input type="text" id="shop-input" placeholder="New item...">
+                    <button id="add-shop-btn">Add</button>
+                </div>
+                <div id="shop-list-container"></div>
+            </div>
+        </div>
+
+        <aside class="sidebar-chat">
+            <div class="chat-header" id="chat-header">AI Aliyah Assistant</div>
+            <div id="chat-window">
+                <div class="ai-bubble" id="ai-advisor">AI Advisor: Welcome!</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="Ask me something...">
+                <button id="send-btn">Send</button>
+            </div>
+        </aside>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
